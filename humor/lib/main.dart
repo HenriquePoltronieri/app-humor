@@ -48,42 +48,41 @@ class _MoodHomePageState extends State<MoodHomePage> {
   String selectedMood = 'Feliz';
   bool showMessage = false;
 
-  // Mapa de dados dos humores
   final Map<String, MoodData> moods = {
     'Feliz': MoodData(
       name: 'Feliz',
       color: const Color(0xFFFFD700),
       icon: Icons.sentiment_very_satisfied,
-      message: 'Que bom ver essa energia positiva! 🌟',
-      emoji: '😊',
+      message: 'Que bom ver essa energia positiva!',
+      emoji: '',
     ),
     'Triste': MoodData(
       name: 'Triste',
       color: const Color(0xFF4A90E2),
       icon: Icons.sentiment_very_dissatisfied,
-      message: 'Tudo vai ficar bem, você consegue! 💙',
-      emoji: '😢',
+      message: 'Tudo vai ficar bem, voce consegue!',
+      emoji: '',
     ),
     'Animado': MoodData(
       name: 'Animado',
       color: const Color(0xFFFF8C00),
       icon: Icons.bolt,
-      message: 'Que energia incrível! Continue assim! ⚡',
-      emoji: '🤩',
+      message: 'Que energia incrivel! Continue assim!',
+      emoji: '',
     ),
     'Calmo': MoodData(
       name: 'Calmo',
       color: const Color(0xFF87CEEB),
       icon: Icons.cloud,
-      message: 'Momento perfeito para relaxar... ☁️',
-      emoji: '😌',
+      message: 'Momento perfeito pra relaxar...',
+      emoji: '',
     ),
     'Bravo': MoodData(
       name: 'Bravo',
       color: const Color(0xFFDC143C),
       icon: Icons.whatshot,
-      message: 'Faça algo que te relaxe! 🔥',
-      emoji: '😠',
+      message: 'Faça algo que te relaxe!',
+      emoji: '',
     ),
   };
 
@@ -93,7 +92,6 @@ class _MoodHomePageState extends State<MoodHomePage> {
       showMessage = false;
     });
 
-    // Mostrar mensagem após um pequeno delay
     Future.delayed(const Duration(milliseconds: 300), () {
       if (!mounted) return;
       setState(() {
@@ -128,7 +126,6 @@ class _MoodHomePageState extends State<MoodHomePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // Cabeçalho
                   Column(
                     children: const [
                       SizedBox(height: 20),
@@ -152,7 +149,6 @@ class _MoodHomePageState extends State<MoodHomePage> {
                     ],
                   ),
 
-                  // Container principal com animação
                   AnimatedContainer(
                     duration: const Duration(milliseconds: 600),
                     curve: Curves.easeInOut,
@@ -171,7 +167,6 @@ class _MoodHomePageState extends State<MoodHomePage> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        // Ícone do humor
                         Icon(
                           currentMood.icon,
                           size: 100,
@@ -179,7 +174,6 @@ class _MoodHomePageState extends State<MoodHomePage> {
                         ),
                         const SizedBox(height: 20),
 
-                        // Texto do humor
                         Text(
                           currentMood.name,
                           style: const TextStyle(
@@ -190,7 +184,6 @@ class _MoodHomePageState extends State<MoodHomePage> {
                         ),
                         const SizedBox(height: 10),
 
-                        // Emoji
                         Text(
                           currentMood.emoji,
                           style: const TextStyle(fontSize: 60),
@@ -199,7 +192,6 @@ class _MoodHomePageState extends State<MoodHomePage> {
                     ),
                   ),
 
-                  // Mensagem animada com AnimatedOpacity
                   AnimatedOpacity(
                     opacity: showMessage ? 1.0 : 0.0,
                     duration: const Duration(milliseconds: 800),
@@ -236,7 +228,6 @@ class _MoodHomePageState extends State<MoodHomePage> {
                     ),
                   ),
 
-                  // Botões de humor
                   Column(
                     children: [
                       const SizedBox(height: 20),
